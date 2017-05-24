@@ -6,6 +6,7 @@
 #include"line.h"
 #include"date.h"
 #include"family.h"
+#include"complex.h"
 
 using namespace std;
 
@@ -30,13 +31,28 @@ int main()
 	cout<<"sum="<<stud[0].sum<<"average="<<stud[0].getAverage()<<endl;
 	Date d1(1,2,3);
 	Student s1(1,(char *)"abc",d1);
-*/
 
 	Father f1((char *)"li",10000);
 	Son s1((char *)"wang",100,&f1);
 	s1.receive(f1.manager(&s1,1000));
 	f1.print();
 	s1.print();
+*/
+	Complex c0,c1(-3,4),c2(1,-10);
+	double d1=5.5,d2=0.5;
+	d1=d1+d2;
+
+	c0=c1+c2;
+	c0.print();
+	c0=c1+d1;
+	c0.print();
+	c0=d1+c1;
+	c0.print();
+
+	c0=c1-c2;
+	c0.print();
+	c0=-c2;
+	c0.print();
 	return 0;
 }
 

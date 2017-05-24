@@ -1,18 +1,22 @@
-executable : main.o point.o student.o line.o date.o family.o
-	g++ -o executable main.o point.o student.o line.o date.o family.o
-main.o : main.cpp point.h
-	gcc -c main.cpp
-point.o : point.cpp point.h
-	gcc -c point.cpp
-student.o : student.cpp student.h
-	gcc -c student.cpp
-line.o : line.cpp line.h
-	gcc -c line.cpp
-date.o : date.cpp date.h
-	gcc -c date.cpp
-family.o : family.cpp family.h
-	gcc -c family.cpp
+#all : prompt executable
+
+#prompt :
+#	echo "开始编译..."
+
+objects = main.o point.o student.o line.o date.o family.o complex.o
+executable : $(objects)
+	g++ -o executable $(objects)
+	@echo 完成编译...
+
+main.o point.o : point.h
+student.o : student.h date.h
+line.o : line.h
+date.o : date.h
+family.o : family.h
+complex.o : complex.h
+#$(objects): point.h student.h date.h line.h date.h family.h complex.h
 
 .PHONY : clean
 clean :
-	rm executable main.o point.o student.o line.o date.o family.o
+	-rm executable $(objects)
+	@echo 删除临时文件...
