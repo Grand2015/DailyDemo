@@ -1,14 +1,18 @@
 #include<iostream>
 #include<cmath>
 //#include<cstring>
+#include<time.h>
+#include<stdlib.h>
 #include"point.h"
 #include"student.h"
 #include"line.h"
 #include"date.h"
 #include"family.h"
 #include"complex.h"
+#include"box.h"
 
 using namespace std;
+//inline int random(int count);
 
 int main()
 {
@@ -37,7 +41,6 @@ int main()
 	s1.receive(f1.manager(&s1,1000));
 	f1.print();
 	s1.print();
-*/
 	Complex c0,c1(-3,4),c2(1,-10);
 	double d1=5.5,d2=0.5;
 	d1=d1+d2;
@@ -53,6 +56,27 @@ int main()
 	c0.print();
 	c0=-c2;
 	c0.print();
+*/
+	const int boxCount = 10;
+	Box boxes[boxCount];
+	const int dimLimit = 10;
+	srand((unsigned)time(0));
+	for(int i = 0;i < boxCount;i++)
+		boxes[i] = Box (random(dimLimit),random(dimLimit),random(dimLimit));
+	Box *pLargest = &boxes[0];
+	for(int i = 1;i < boxCount;i++)
+		if(*pLargest < boxes[i])
+			pLargest = &boxes[i];
+	cout<<"最大的盒子：";
+	pLargest->show();
+	
+	const double volMin = 50.0;
+	const double volMax = 100.0;
+
+	for(int i = 0;i < boxCount;i++)
+		if(volMin < boxes[i] && boxes[i] < volMax)
+			boxes[i].show();
+
 	return 0;
 }
 
