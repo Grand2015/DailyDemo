@@ -1,3 +1,6 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+
 #include"date.h"
 //class Date;
 class Student
@@ -15,3 +18,5 @@ private:
 	float score;
 	Date birthday;
 };
+
+#endif

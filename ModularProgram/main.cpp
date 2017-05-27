@@ -56,7 +56,6 @@ int main()
 	c0.print();
 	c0=-c2;
 	c0.print();
-*/
 	const int boxCount = 10;
 	Box boxes[boxCount];
 	const int dimLimit = 10;
@@ -77,6 +76,9 @@ int main()
 		if(volMin < boxes[i] && boxes[i] < volMax)
 			boxes[i].show();
 
+*/
+	Date d0(2011,12,31);
+	d0.print();
 	return 0;
 }
 
