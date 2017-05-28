@@ -10,12 +10,24 @@
 #include"family.h"
 #include"complex.h"
 #include"box.h"
+#include"intArray.h"
 
 using namespace std;
 //inline int random(int count);
 
 int main()
 {
+	IntArray a(5),b(3);
+	for(int i=1;i<=5;i++)
+		a[i]=i;
+	cout<<"a:";
+	for(int i=1;i<=5;i++)
+		cout<<a[i]<<' ';
+	cout<<endl;
+	cout<<a[6];
+	cout<<"b:";
+	for(int i=1;i<=3;i++)
+		cout<<b[i]<<' ';
 /*	
 	Point p1,p2;
 	cout<<"请输入两组坐标"<<endl;
@@ -76,9 +88,9 @@ int main()
 		if(volMin < boxes[i] && boxes[i] < volMax)
 			boxes[i].show();
 
-*/
 	Date d0(2011,12,31);
 	d0.print();
+*/
 	return 0;
 }
 
