@@ -3,6 +3,8 @@
 
 using namespace std;
 
+const int Date::days[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+
 Date::Date()
 {	
 	year  = 1900;
