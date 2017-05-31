@@ -1,14 +1,12 @@
-#ifndef STUDENT_H
-#define STUDENT_H
+#ifndef _STUDENT_H
+#define _STUDENT_H
 
 #include"date.h"
 //class Date;
 class Student
 {
 public:
-//	Student(char *n,int a,float s);
 	Student(int n,char *nam,Date birth);
-//	Student(int n,char *nam,int y,int )
 	static float sum;
 	static float getAverage();
 	void disp();
